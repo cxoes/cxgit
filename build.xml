@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="admin" default="compile">
+    <property name="libdir" value="${basedir}/../../lib/java"/>
+    <property name="builddir" value="${basedir}/classes"/>
+
+    <property name="compiler.debug" value="on"/>
+    <property name="compiler.generate.no.warnings" value="off"/>
+    <property name="compiler.args" value=""/>
+    <property name="compiler.max.memory" value="128m"/>
+    <patternset id="compiler.resources">
+      <include name="**/?*.properties"/>
+      <include name="**/?*.xml"/>
+    </patternset>
+
+    <import file="${basedir}/../common-build.xml"/>
+
+    <target name="run-create" depends="compile,ask-properties" description="Run the object creation sample">
+        <java classname="com.rsa.samples.admin.AdminAPIDemos" classpathref="classpath.run.ejb" fork="true">
+            <arg value="create"/>
+            <arg value="${admin.name}"/>
+            <arg value="${admin.pw}" />
+            <sysproperty key="bea.home" value="${libdir}"/>
+            <sysproperty key="weblogic.security.SSL.trustedCAKeyStore" value="${libdir}/am_root.jks"/>
+        </java>
+    </target>
+
+    <target name="run-assign" depends="compile,ask-properties" description="Run the token assignment sample">
+        <java classname="com.rsa.samples.admin.AdminAPIDemos" classpathref="classpath.run.ejb" fork="true">
+            <arg value="assign"/>
+            <arg value="${admin.name}"/>
+            <arg value="${admin.pw}" />
+            <sysproperty key="bea.home" value="${libdir}"/>
+            <sysproperty key="weblogic.security.SSL.trustedCAKeyStore" value="${libdir}/am_root.jks"/>
+        </java>
+    </target>
+
+    <target name="run-update" depends="compile,ask-properties" description="Run the object creation sample">
+        <java classname="com.rsa.samples.admin.AdminAPIDemos" classpathref="classpath.run.ejb" fork="true" >
+            <arg value="update"/>
+            <arg value="${admin.name}"/>
+            <arg value="${admin.pw}" />
+            <sysproperty key="bea.home" value="${libdir}"/>
+            <sysproperty key="weblogic.security.SSL.trustedCAKeyStore" value="${libdir}/am_root.jks"/>
+        </java>
+    </target>
+
+    <target name="run-enable-ea-ott" depends="compile,ask-properties" description="Run the enable emergency OTT sample">
+        <java classname="com.rsa.samples.admin.AdminAPIDemos" classpathref="classpath.run.ejb" fork="true" >
+            <arg value="enable-ea-ott"/>
+            <arg value="${admin.name}"/>
+            <arg value="${admin.pw}" />
+            <sysproperty key="bea.home" value="${libdir}"/>
+            <sysproperty key="weblogic.security.SSL.trustedCAKeyStore" value="${libdir}/am_root.jks"/>
+        </java>
+    </target>
+
+    <target name="run-delete" depends="compile,ask-properties" description="Run the object deletion sample">
+        <java classname="com.rsa.samples.admin.AdminAPIDemos" classpathref="classpath.run.ejb" fork="true">
+            <arg value="delete"/>
+            <arg value="${admin.name}"/>
+            <arg value="${admin.pw}" />
+            <sysproperty key="bea.home" value="${libdir}"/>
+            <sysproperty key="weblogic.security.SSL.trustedCAKeyStore" value="${libdir}/am_root.jks"/>
+        </java>
+    </target>
+
+    <target name="run-disable" depends="compile,ask-properties" description="Run the object deletion sample">
+        <java classname="com.rsa.samples.admin.AdminAPIDemos" classpathref="classpath.run.ejb" fork="true">
+            <arg value="disable"/>
+            <arg value="${admin.name}"/>
+            <arg value="${admin.pw}" />
+            <sysproperty key="bea.home" value="${libdir}"/>
+            <sysproperty key="weblogic.security.SSL.trustedCAKeyStore" value="${libdir}/am_root.jks"/>
+        </java>
+    </target>
+
+    <target name="run-listusers" depends="compile,ask-properties" description="Run the iterative search for users sample">
+        <java classname="com.rsa.samples.admin.AdminAPIDemos" classpathref="classpath.run.ejb" fork="true">
+            <arg value="list-users"/>
+            <arg value="${admin.name}"/>
+            <arg value="${admin.pw}" />
+            <sysproperty key="bea.home" value="${libdir}"/>
+            <sysproperty key="weblogic.security.SSL.trustedCAKeyStore" value="${libdir}/am_root.jks"/>
+        </java>
+    </target>
+
+    <target name="run-listgroups" depends="compile,ask-properties" description="Run the group list sample">
+        <java classname="com.rsa.samples.admin.AdminAPIDemos" classpathref="classpath.run.ejb" fork="true">
+            <arg value="list-groups"/>
+            <arg value="${admin.name}"/>
+            <arg value="${admin.pw}" />
+            <sysproperty key="bea.home" value="${libdir}"/>
+            <sysproperty key="weblogic.security.SSL.trustedCAKeyStore" value="${libdir}/am_root.jks"/>
+        </java>
+    </target>
+
+    <target name="run-create-jython" depends="compile,ask-properties" description="Run the object creation sample">
+        <java classname="org.python.util.jython" classpathref="classpath.run.ejb" fork="true">
+            <arg value="src/AdminAPIDemos.py"/>
+            <arg value="create"/>
+            <arg value="${admin.name}"/>
+            <arg value="${admin.pw}" />
+            <sysproperty key="bea.home" value="${libdir}"/>
+            <sysproperty key="weblogic.security.SSL.trustedCAKeyStore" value="${libdir}/am_root.jks"/>
+            <sysproperty key="python.packages.directories" value="jarsDir"/>
+            <sysproperty key="jarsDir" value="${libdir}"/>
+        </java>
+    </target>
+
+    <target name="run-assign-jython" depends="compile,ask-properties" description="Run the token assignment sample">
+        <java classname="org.python.util.jython" classpathref="classpath.run.ejb" fork="true">
+            <arg value="src/AdminAPIDemos.py"/>
+            <arg value="assign"/>
+            <arg value="${admin.name}"/>
+            <arg value="${admin.pw}" />
+            <sysproperty key="bea.home" value="${libdir}"/>
+            <sysproperty key="weblogic.security.SSL.trustedCAKeyStore" value="${libdir}/am_root.jks"/>
+            <sysproperty key="python.packages.directories" value="jarsDir"/>
+            <sysproperty key="jarsDir" value="${libdir}"/>
+        </java>
+    </target>
+
+    <target name="run-update-jython" depends="compile,ask-properties" description="Run the object creation sample">
+        <java classname="org.python.util.jython" classpathref="classpath.run.ejb" fork="true">
+            <arg value="src/AdminAPIDemos.py"/>
+            <arg value="update"/>
+            <arg value="${admin.name}"/>
+            <arg value="${admin.pw}" />
+            <sysproperty key="bea.home" value="${libdir}"/>
+            <sysproperty key="weblogic.security.SSL.trustedCAKeyStore" value="${libdir}/am_root.jks"/>
+            <sysproperty key="python.packages.directories" value="jarsDir"/>
+            <sysproperty key="jarsDir" value="${libdir}"/>
+        </java>
+    </target>
+
+    <target name="run-delete-jython" depends="compile,ask-properties" description="Run the object deletion sample">
+        <java classname="org.python.util.jython" classpathref="classpath.run.ejb" fork="true">
+            <arg value="src/AdminAPIDemos.py"/>
+            <arg value="delete"/>
+            <arg value="${admin.name}"/>
+            <arg value="${admin.pw}" />
+            <sysproperty key="bea.home" value="${libdir}"/>
+            <sysproperty key="weblogic.security.SSL.trustedCAKeyStore" value="${libdir}/am_root.jks"/>
+            <sysproperty key="python.packages.directories" value="jarsDir"/>
+            <sysproperty key="jarsDir" value="${libdir}"/>
+        </java>
+    </target>
+
+    <target name="run-disable-jython" depends="compile,ask-properties" description="Run the object deletion sample">
+        <java classname="org.python.util.jython" classpathref="classpath.run.ejb" fork="true">
+            <arg value="src/AdminAPIDemos.py"/>
+            <arg value="disable"/>
+            <arg value="${admin.name}"/>
+            <arg value="${admin.pw}" />
+            <sysproperty key="bea.home" value="${libdir}"/>
+            <sysproperty key="weblogic.security.SSL.trustedCAKeyStore" value="${libdir}/am_root.jks"/>
+            <sysproperty key="python.packages.directories" value="jarsDir"/>
+            <sysproperty key="jarsDir" value="${libdir}"/>
+        </java>
+    </target>
+
+    <target name="run-listusers-jython" depends="compile,ask-properties" description="Run the iterative search for users sample">
+        <java classname="org.python.util.jython" classpathref="classpath.run.ejb" fork="true">
+            <arg value="src/AdminAPIDemos.py"/>
+            <arg value="list-users"/>
+            <arg value="${admin.name}"/>
+            <arg value="${admin.pw}" />
+            <sysproperty key="bea.home" value="${libdir}"/>
+            <sysproperty key="weblogic.security.SSL.trustedCAKeyStore" value="${libdir}/am_root.jks"/>
+            <sysproperty key="python.packages.directories" value="jarsDir"/>
+            <sysproperty key="jarsDir" value="${libdir}"/>
+        </java>
+    </target>
+
+    <target name="run-listgroups-jython" depends="compile,ask-properties" description="Run the iterative search for groups sample">
+        <java classname="org.python.util.jython" classpathref="classpath.run.ejb" fork="true">
+            <arg value="src/AdminAPIDemos.py"/>
+            <arg value="list-groups"/>
+            <arg value="${admin.name}"/>
+            <arg value="${admin.pw}" />
+            <sysproperty key="bea.home" value="${libdir}"/>
+            <sysproperty key="weblogic.security.SSL.trustedCAKeyStore" value="${libdir}/am_root.jks"/>
+            <sysproperty key="python.packages.directories" value="jarsDir"/>
+            <sysproperty key="jarsDir" value="${libdir}"/>
+        </java>
+    </target>
+
+    <target name="run-create-soap" depends="compile,ask-properties" description="Run the object creation sample">
+        <java classname="com.rsa.samples.admin.AdminAPIDemos" classpathref="classpath.run.soap" fork="true">
+            <arg value="create"/>
+            <arg value="${admin.name}"/>
+            <arg value="${admin.pw}" />
+            <sysproperty key="ims.client.primary.command.target" value="SOAPCommandTargetBasicAuth"/>
+            <sysproperty key="javax.net.ssl.trustStore" value="${libdir}/am_root.jks"/>
+        </java>
+    </target>
+
+    <target name="run-assign-soap" depends="compile,ask-properties" description="Run the token assignment sample">
+        <java classname="com.rsa.samples.admin.AdminAPIDemos" classpathref="classpath.run.soap" fork="true">
+            <arg value="assign"/>
+            <arg value="${admin.name}"/>
+            <arg value="${admin.pw}" />
+            <sysproperty key="ims.client.primary.command.target" value="SOAPCommandTargetBasicAuth"/>
+            <sysproperty key="javax.net.ssl.trustStore" value="${libdir}/am_root.jks"/>
+        </java>
+    </target>
+
+    <target name="run-update-soap" depends="compile,ask-properties" description="Run the object creation sample">
+        <java classname="com.rsa.samples.admin.AdminAPIDemos" classpathref="classpath.run.soap" fork="true" >
+            <arg value="update"/>
+            <arg value="${admin.name}"/>
+            <arg value="${admin.pw}" />
+            <sysproperty key="ims.client.primary.command.target" value="SOAPCommandTargetBasicAuth"/>
+            <sysproperty key="javax.net.ssl.trustStore" value="${libdir}/am_root.jks"/>
+        </java>
+    </target>
+
+    <target name="run-delete-soap" depends="compile,ask-properties" description="Run the object deletion sample">
+        <java classname="com.rsa.samples.admin.AdminAPIDemos" classpathref="classpath.run.soap" fork="true">
+            <arg value="delete"/>
+            <arg value="${admin.name}"/>
+            <arg value="${admin.pw}" />
+            <sysproperty key="ims.client.primary.command.target" value="SOAPCommandTargetBasicAuth"/>
+            <sysproperty key="javax.net.ssl.trustStore" value="${libdir}/am_root.jks"/>
+        </java>
+    </target>
+
+    <target name="run-disable-soap" depends="compile,ask-properties" description="Run the object deletion sample">
+        <java classname="com.rsa.samples.admin.AdminAPIDemos" classpathref="classpath.run.soap" fork="true">
+            <arg value="disable"/>
+            <arg value="${admin.name}"/>
+            <arg value="${admin.pw}" />
+            <sysproperty key="ims.client.primary.command.target" value="SOAPCommandTargetBasicAuth"/>
+            <sysproperty key="javax.net.ssl.trustStore" value="${libdir}/am_root.jks"/>
+        </java>
+    </target>
+
+    <target name="run-listusers-soap" depends="compile,ask-properties" description="Run the iterative search for users sample">
+        <java classname="com.rsa.samples.admin.AdminAPIDemos" classpathref="classpath.run.soap" fork="true">
+            <arg value="list-users"/>
+            <arg value="${admin.name}"/>
+            <arg value="${admin.pw}" />
+            <sysproperty key="ims.client.primary.command.target" value="SOAPCommandTargetBasicAuth"/>
+            <sysproperty key="javax.net.ssl.trustStore" value="${libdir}/am_root.jks"/>
+        </java>
+    </target>
+
+    <target name="run-listgroups-soap" depends="compile,ask-properties" description="Run the group list sample">
+        <java classname="com.rsa.samples.admin.AdminAPIDemos" classpathref="classpath.run.soap" fork="true">
+            <arg value="list-groups"/>
+            <arg value="${admin.name}"/>
+            <arg value="${admin.pw}" />
+            <sysproperty key="ims.client.primary.command.target" value="SOAPCommandTargetBasicAuth"/>
+            <sysproperty key="javax.net.ssl.trustStore" value="${libdir}/am_root.jks"/>
+        </java>
+    </target>
+
+    <target name="run-create-http" depends="compile,ask-properties" description="Run the object creation sample">
+        <java classname="com.rsa.samples.admin.AdminAPIDemos" classpathref="classpath.run.httpinvoker" fork="true">
+            <arg value="create"/>
+            <arg value="${admin.name}"/>
+            <arg value="${admin.pw}" />
+            <sysproperty key="ims.client.primary.command.target" value="HttpInvokerCommandTargetBasicAuth"/>
+            <sysproperty key="javax.net.ssl.trustStore" value="${libdir}/am_root.jks"/>
+        </java>
+    </target>
+
+    <target name="run-assign-http" depends="compile,ask-properties" description="Run the token assignment sample">
+        <java classname="com.rsa.samples.admin.AdminAPIDemos" classpathref="classpath.run.httpinvoker" fork="true">
+            <arg value="assign"/>
+            <arg value="${admin.name}"/>
+            <arg value="${admin.pw}" />
+            <sysproperty key="ims.client.primary.command.target" value="HttpInvokerCommandTargetBasicAuth"/>
+            <sysproperty key="javax.net.ssl.trustStore" value="${libdir}/am_root.jks"/>
+        </java>
+    </target>
+
+    <target name="run-update-http" depends="compile,ask-properties" description="Run the object creation sample">
+        <java classname="com.rsa.samples.admin.AdminAPIDemos" classpathref="classpath.run.httpinvoker" fork="true" >
+            <arg value="update"/>
+            <arg value="${admin.name}"/>
+            <arg value="${admin.pw}" />
+            <sysproperty key="ims.client.primary.command.target" value="HttpInvokerCommandTargetBasicAuth"/>
+            <sysproperty key="javax.net.ssl.trustStore" value="${libdir}/am_root.jks"/>
+        </java>
+    </target>
+
+    <target name="run-delete-http" depends="compile,ask-properties" description="Run the object deletion sample">
+        <java classname="com.rsa.samples.admin.AdminAPIDemos" classpathref="classpath.run.httpinvoker" fork="true">
+            <arg value="delete"/>
+            <arg value="${admin.name}"/>
+            <arg value="${admin.pw}" />
+            <sysproperty key="ims.client.primary.command.target" value="HttpInvokerCommandTargetBasicAuth"/>
+            <sysproperty key="javax.net.ssl.trustStore" value="${libdir}/am_root.jks"/>
+        </java>
+    </target>
+
+    <target name="run-disable-http" depends="compile,ask-properties" description="Run the object deletion sample">
+        <java classname="com.rsa.samples.admin.AdminAPIDemos" classpathref="classpath.run.httpinvoker" fork="true">
+            <arg value="disable"/>
+            <arg value="${admin.name}"/>
+            <arg value="${admin.pw}" />
+            <sysproperty key="ims.client.primary.command.target" value="HttpInvokerCommandTargetBasicAuth"/>
+            <sysproperty key="javax.net.ssl.trustStore" value="${libdir}/am_root.jks"/>
+        </java>
+    </target>
+
+    <target name="run-listusers-http" depends="compile,ask-properties" description="Run the iterative search for users sample">
+        <java classname="com.rsa.samples.admin.AdminAPIDemos" classpathref="classpath.run.httpinvoker" fork="true">
+            <arg value="list-users"/>
+            <arg value="${admin.name}"/>
+            <arg value="${admin.pw}" />
+            <sysproperty key="ims.client.primary.command.target" value="HttpInvokerCommandTargetBasicAuth"/>
+            <sysproperty key="javax.net.ssl.trustStore" value="${libdir}/am_root.jks"/>
+        </java>
+    </target>
+
+    <target name="run-listgroups-http" depends="compile,ask-properties" description="Run the group list sample">
+        <java classname="com.rsa.samples.admin.AdminAPIDemos" classpathref="classpath.run.httpinvoker" fork="true">
+            <arg value="list-groups"/>
+            <arg value="${admin.name}"/>
+            <arg value="${admin.pw}" />
+            <sysproperty key="ims.client.primary.command.target" value="HttpInvokerCommandTargetBasicAuth"/>
+            <sysproperty key="javax.net.ssl.trustStore" value="${libdir}/am_root.jks"/>
+        </java>
+    </target>
+</project>

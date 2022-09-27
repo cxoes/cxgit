@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/RSAAuthentication/material/RSA Authentication Manager SDK/RSA Authentication Manager SDK/lib/java/am-client.jar"/>
+	<classpathentry kind="lib" path="C:/RSAAuthentication/material/RSA Authentication Manager SDK/RSA Authentication Manager SDK/lib/java/aopalliance.jar"/>
+	<classpathentry kind="lib" path="C:/RSAAuthentication/material/RSA Authentication Manager SDK/RSA Authentication Manager SDK/lib/java/axis.jar"/>
+	<classpathentry kind="lib" path="C:/RSAAuthentication/material/RSA Authentication Manager SDK/RSA Authentication Manager SDK/lib/java/axis-jaxrpc.jar"/>
+	<classpathentry kind="lib" path="C:/RSAAuthentication/material/RSA Authentication Manager SDK/RSA Authentication Manager SDK/lib/java/axis-saaj.jar"/>
+	<classpathentry kind="lib" path="C:/RSAAuthentication/material/RSA Authentication Manager SDK/RSA Authentication Manager SDK/lib/java/clu-common.jar"/>
+	<classpathentry kind="lib" path="C:/RSAAuthentication/material/RSA Authentication Manager SDK/RSA Authentication Manager SDK/lib/java/commons-beanutils.jar"/>
+	<classpathentry kind="lib" path="C:/RSAAuthentication/material/RSA Authentication Manager SDK/RSA Authentication Manager SDK/lib/java/commons-codec.jar"/>
+	<classpathentry kind="lib" path="C:/RSAAuthentication/material/RSA Authentication Manager SDK/RSA Authentication Manager SDK/lib/java/commons-discovery.jar"/>
+	<classpathentry kind="lib" path="C:/RSAAuthentication/material/RSA Authentication Manager SDK/RSA Authentication Manager SDK/lib/java/commons-httpclient.jar"/>
+	<classpathentry kind="lib" path="C:/RSAAuthentication/material/RSA Authentication Manager SDK/RSA Authentication Manager SDK/lib/java/commons-lang.jar"/>
+	<classpathentry kind="lib" path="C:/RSAAuthentication/material/RSA Authentication Manager SDK/RSA Authentication Manager SDK/lib/java/commons-logging.jar"/>
+	<classpathentry kind="lib" path="C:/RSAAuthentication/material/RSA Authentication Manager SDK/RSA Authentication Manager SDK/lib/java/iScreen.jar"/>
+	<classpathentry kind="lib" path="C:/RSAAuthentication/material/RSA Authentication Manager SDK/RSA Authentication Manager SDK/lib/java/iScreen-ognl.jar"/>
+	<classpathentry kind="lib" path="C:/RSAAuthentication/material/RSA Authentication Manager SDK/RSA Authentication Manager SDK/lib/java/log4j.jar"/>
+	<classpathentry kind="lib" path="C:/RSAAuthentication/material/RSA Authentication Manager SDK/RSA Authentication Manager SDK/lib/java/ognl.jar"/>
+	<classpathentry kind="lib" path="C:/RSAAuthentication/material/RSA Authentication Manager SDK/RSA Authentication Manager SDK/lib/java/spring-aop.jar"/>
+	<classpathentry kind="lib" path="C:/RSAAuthentication/material/RSA Authentication Manager SDK/RSA Authentication Manager SDK/lib/java/spring-beans.jar"/>
+	<classpathentry kind="lib" path="C:/RSAAuthentication/material/RSA Authentication Manager SDK/RSA Authentication Manager SDK/lib/java/spring-context.jar"/>
+	<classpathentry kind="lib" path="C:/RSAAuthentication/material/RSA Authentication Manager SDK/RSA Authentication Manager SDK/lib/java/spring-core.jar"/>
+	<classpathentry kind="lib" path="C:/RSAAuthentication/material/RSA Authentication Manager SDK/RSA Authentication Manager SDK/lib/java/spring-expression.jar"/>
+	<classpathentry kind="lib" path="C:/RSAAuthentication/material/RSA Authentication Manager SDK/RSA Authentication Manager SDK/lib/java/spring-web.jar"/>
+	<classpathentry kind="lib" path="C:/RSAAuthentication/material/RSA Authentication Manager SDK/RSA Authentication Manager SDK/lib/java/wlfullclient.jar"/>
+	<classpathentry kind="lib" path="C:/RSAAuthentication/material/RSA Authentication Manager SDK/RSA Authentication Manager SDK/lib/java/wsdl4j.jar"/>
+	<classpathentry kind="lib" path="C:/RSAAuthentication/material/RSA Authentication Manager SDK/RSA Authentication Manager SDK/lib/java/xercesImpl.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="classes"/>
+</classpath>
