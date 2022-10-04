@@ -155,7 +155,7 @@ public class AdminAPIDemos {
             throw new Exception("ERROR: Could not find realm SystemDomain");
         }
         domain = realms[0].getTopLevelSecurityDomain();
-        idSource = realms[0].getIdentitySources()[0];
+        idSource = realms[0].getIdentitySources()[1];
     }
 
     /**
