@@ -352,8 +352,8 @@ public class AdminAPIDemos {
         policy.setRealmGuid(domain.getGuid()); // policies are always owned by
                                                // realm
         policy.setRealmDefault(false); // do not change default policy for realm
-        policy.setMaxLength(20);
-        policy.setMinLength(8);
+        policy.setMaxLength(12);
+        policy.setMinLength(10);
         policy.setHistorySize(5);
         policy.setMinRequiredAlpha(4);
         policy.setMinRequiredLowerCase(1);
