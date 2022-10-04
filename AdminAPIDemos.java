@@ -145,7 +145,7 @@ public class AdminAPIDemos {
      *
      * @throws CommandException
      *             if something goes wrong
-     */
+     */test
     public AdminAPIDemos() throws Exception {
         SearchRealmsCommand searchRealmCmd = new SearchRealmsCommand();
         searchRealmCmd.setFilter(Filter.equal(RealmDTO.NAME_ATTRIBUTE, "SystemDomain"));
