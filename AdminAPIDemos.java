@@ -237,7 +237,7 @@ public class AdminAPIDemos {
                 pair.setGuid(policyGuid);
             }
         }
-        securityDomain.setDescription("Updated by AM Demo code");
+        securityDomain.setDescription("DEMO CXONE");
 
         UpdateSecurityDomainCommand cmd = new UpdateSecurityDomainCommand();
         cmd.setSecurityDomain(securityDomain);
