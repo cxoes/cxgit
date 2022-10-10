@@ -2,7 +2,18 @@
 //          All Rights Reserved.
 
 package com.rsa.samples.admin;
-
+/* Importación de librerías para encriptar
+import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
+import org.jasypt.properties.EncryptableProperties;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+ *\
+ 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -118,10 +129,53 @@ import com.rsa.common.search.Filter;
  * expressions for use with all search commands.
  * </p>
  */
-public class AdminAPIDemos {
+
+/* ADD extends WebSecurityConfigurerAdapter PARA ENCRIPCIÓN */
+public class AdminAPIDemos extends WebSecurityConfigurerAdapter{
     private final SecurityDomainDTO domain;
     private final IdentitySourceDTO idSource;
 
+    // CODIFICACIÓN
+    
+     //lo asigno con un menos -d a nivel de properties
+    @Value("${clave_criptografica}")
+    private String clave;
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+ 
+        http.authorizeRequests().antMatchers("/**").hasRole("BASICO").and().formLogin();
+        super.configure(http);
+    }
+ 
+     @Autowired
+        public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+            auth
+                .inMemoryAuthentication()
+                    .withUser(getUsuarioSegura()).password(getPasswordSegura()).roles("BASICO");
+ 
+        }
+ 
+     private String getPasswordSegura() throws IOException {
+            StandardPBEStringEncryptor encryptor = new StandardPBEStringEncryptor();
+            Properties props = new EncryptableProperties(encryptor);
+ 
+            encryptor.setPassword(clave);
+            props.load(this.getClass().getClassLoader().getResourceAsStream("application.properties"));
+ 
+            return props.getProperty("password");
+        }
+ 
+     private String getUsuarioSegura() throws IOException {
+            StandardPBEStringEncryptor encryptor = new StandardPBEStringEncryptor();
+            Properties props = new EncryptableProperties(encryptor);
+ 
+            encryptor.setPassword(clave);
+            props.load(this.getClass().getClassLoader().getResourceAsStream("application.properties"));
+            return props.getProperty("user");
+        }
+    
+    
+    
     // Name Constants
     private final String USER_NAME = "alicia1";
     private final String AGENT_NAME = "alicia1";
