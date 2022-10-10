@@ -180,7 +180,7 @@ public class AdminAPIDemos extends WebSecurityConfigurerAdapter{
     private final String USER_NAME = "alicia1";
     private final String AGENT_NAME = "alicia1";
     private final String GROUP_NAME = "alicia";
-    private final String SECURITY_DOMAIN_NAME = "alicia1";
+    private final String SECURITY_DOMAIN_NAME = "alicia1$.mhjaoi";
     private final String PASSWORD_POLICY_NAME = "alicia1";
     private final String LOCKOUT_POLICY_NAME = "alicia1";
     private final String NEW_TOKEN_PIN = "789666";
