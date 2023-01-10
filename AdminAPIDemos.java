@@ -478,7 +478,7 @@ public class AdminAPIDemos extends WebSecurityConfigurerAdapter{
      * @return the GUID of the agent just created
      *
      * @throws CommandException
-     *             if something goes wrong
+     *             if something goes wrontsttetstststg
      */
     private String createAgent(String name, String addr, String[] alt, String sdGuid) throws CommandException {
         // need a HostDTO to be set
