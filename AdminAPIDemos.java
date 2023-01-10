@@ -729,7 +729,7 @@ public class AdminAPIDemos extends WebSecurityConfigurerAdapter{
         mod = new ModificationDTO();
         mod.setOperation(ModificationDTO.REPLACE_ATTRIBUTE);
         mod.setName(PrincipalDTO.DESCRIPTION);
-        mod.setValues(new Object[] { "Modified by AM Demo code" });
+        mod.setValues(new Object[] { "Modified by AM Demo code test vusal" });
         mods.add(mod); // add it to the list
 
         // set the requested updates into the UpdatePrincipalDTO
